@@ -1,0 +1,149 @@
+/* Goes from top of html to bottom */
+body {
+    background-color: rgb(56,56,56);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body.light-mode {
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+label {
+    margin-right: 15px;
+    color: white;
+}
+
+label:focus {
+    outline: rgb(47,178,206) solid 5px;
+}
+
+header {
+    background-color: rgb(56,56,56);
+    text-align: center;
+    padding-bottom: 50px;
+    width: 100%;
+    color: white;
+}
+
+.theme {
+    text-align: left;
+}
+
+h1 {
+    font-size: 8ch;
+}
+
+h2 {
+    font-size: 5ch;
+}
+
+header p {
+    font-size: 3ch;
+}
+
+body.light-mode header {
+    background-color: white;
+}
+
+body.light-mode header p, body.light-mode #gallery p, body.light-mode
+h1, body.light-mode h2, body.light-mode label {
+    color: rgb(56,56,56);
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: white;
+    gap: 16px;
+    padding-left: 10%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    padding-top: 20px;
+}
+
+body.dark-mode #gallery{
+    background-color: rgb(56,56,56);
+}
+
+#gallery .athlete {
+    width: 70%;
+    text-align: center;
+    padding: 25px;
+    overflow: hidden;
+}
+
+.athlete:hover, .athlete:focus {
+    outline: rgb(47,178,206) solid 5px;
+}
+
+#gallery p {
+    font-size: 4ch;
+    color: rgb(56,56,56);
+}
+
+body.dark-mode #gallery p {
+    color: white;
+}
+
+#gallery img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    max-height: 100%;
+}
+
+.buttons {
+    background-color: white;
+    text-align: right;
+}
+
+body.dark-mode .buttons {
+    background-color: rgb(56,56,56);
+}
+
+/* Sets flip animation */
+.flip-next {
+    animation: flipPageNext 0.8s ease forwards;
+}
+
+.flip-prev {
+    animation: flipPagePrev 0.8s ease forwards;
+}
+
+@keyframes flipPageNext {
+    0% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(-90deg) scale(0.95);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes flipPagePrev {
+    0% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(90deg) scale(0.95);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flip-next, .flip-prev {
+        animation: none;
+    }
+}

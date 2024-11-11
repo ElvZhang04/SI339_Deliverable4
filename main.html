@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Athlete Group Page</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="theme">
+                <label>
+                    <input type="radio" name="theme" value="default" id="default">
+                        Default
+                </label>
+                <label>
+                    <input type="radio" name="theme" value="dark-mode" id="dark-mode">
+                        Dark
+                </label>
+                <label>
+                    <input type="radio" name="theme" value="light-mode" id="light-mode">
+                        Light
+                </label>
+            </div>
+            <img src="images/logo.png" alt="Ann Arbor Skyline Logo"> 
+            <h1>Ann Arbor Skyline Eagles</h1>
+            <h2>Meet Our Athletes</h2>
+            <p>Click on an athlete's photo to learn more about them!</p>
+        </header>
+        <main id="gallery">
+        </main>
+        <div class="buttons">
+            <button id="prev" onclick="prevPage()"><-- Previous</button>
+            <button id="next" onclick="nextPage()">Next --></button>
+        </div>
+        <script src="main.js"></script>
+        <script src="error.js"></script>
+    </body>
+</html>
